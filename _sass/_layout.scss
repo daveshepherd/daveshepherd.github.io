@@ -2,8 +2,7 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
-    border-bottom: 1px solid $grey-color-light;
+    background-color: #c2c4c5;
     min-height: 56px;
 
     // Positioning context for the mobile navigation icon
@@ -92,7 +91,7 @@
  * Site footer
  */
 .site-footer {
-    border-top: 1px solid $grey-color-light;
+    background-color: #24272c;
     padding: $spacing-unit 0;
 }
 
@@ -109,9 +108,25 @@
 
 .footer-col-wrapper {
     font-size: 15px;
-    color: $grey-color;
+    color: $grey-color-light;
     margin-left: -$spacing-unit / 2;
     @extend %clearfix;
+}
+
+.footer-col-wrapper {
+    a {
+        color: $grey-color-light;
+        text-decoration: none;
+
+        &:visited {
+            color: darken($grey-color-light, 15%);
+        }
+
+        &:hover {
+            color: $grey-color-light;
+            text-decoration: underline;
+        }
+    }
 }
 
 .footer-col {
@@ -121,18 +136,14 @@
 }
 
 .footer-col-1 {
-    width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-    width:         calc(35% - (#{$spacing-unit} / 2));
+    width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+    width:         calc(50% - (#{$spacing-unit} / 2));
 }
 
 .footer-col-2 {
-    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-    width:         calc(20% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-3 {
-    width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-    width:         calc(45% - (#{$spacing-unit} / 2));
+    width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+    width:         calc(50% - (#{$spacing-unit} / 2));
+    text-align: right;
 }
 
 @include media-query($on-laptop) {
@@ -174,6 +185,7 @@
     list-style: none;
 
     > li {
+        border-bottom: 1px solid #d3d7d9;
         margin-bottom: $spacing-unit;
     }
 }
@@ -234,3 +246,7 @@
         }
     }
 }
+
+#hideoverflow { overflow: hidden; }
+#outer { position: relative; left: 50%; float: left; }
+#inner { position: relative; left: -50%; float: left; }

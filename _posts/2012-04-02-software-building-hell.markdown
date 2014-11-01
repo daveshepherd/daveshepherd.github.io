@@ -44,6 +44,6 @@ In addition to these problems, the long term plan for this project is that many 
 I have found that Ant is very good at building modules and is very flexible. However, in order to manage build dependencies you need something more. The two options that seem to be popular are [Apache Ivy][ivy] (in conjunction with Ant) and [Apache Maven][maven], which is a complete build manager, so in theory could replace your Ant scripts entirely.
 
 [ant]:   				http://ant.apache.org/
-[project-dependencies]:	{{ site.url }}/assets/project-dependencies.png
+[project-dependencies]:	{{ site.baseurl }}/assets/project-dependencies.png
 [ivy]:					http://ant.apache.org/ivy/
 [maven]:				http://maven.apache.org/

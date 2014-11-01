@@ -163,5 +163,5 @@ if you also build the project’s dependencies then add the “also-make” para
 
 Alternatively, you can navigate to the child module and run maven, this will automatically pick up the parent pom.
 
-[multi-module-maven]: {{ site.url }}/assets/multi-module-mvn.png
+[multi-module-maven]: {{ site.baseurl }}/assets/multi-module-mvn.png
 [bitbucket-examples]: https://bitbucket.org/daveshepherd/examples/src/de8d67762528/multi-module-mvn/

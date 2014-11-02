@@ -2,9 +2,8 @@
 title: Dave Shepherd
 description: > # this means to ignore newlines until "baseurl:"
   Dave is a software engineer specialising in enterprise Java, with an keen interest in a variety of technologies and development practices, including web technologies, application architecture and agile development.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://daveshepherd.uk" # the base hostname & protocol for your site
-#email: website@daveshepherd.uk
+baseurl: ""
+url: "http://daveshepherd.co.uk"
 linkedin_username: dashepherd
 github_username:  daveshepherd
 

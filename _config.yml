@@ -6,6 +6,7 @@ baseurl: ""
 url: "http://daveshepherd.co.uk"
 linkedin_username: dashepherd
 github_username:  daveshepherd
+future: true
 
 # Build settings
 markdown: kramdown

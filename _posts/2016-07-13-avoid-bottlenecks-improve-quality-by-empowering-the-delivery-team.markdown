@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Avoid bottlenecks and improve quality by empowering the delivery team"
+title:  "Avoid Bottlenecks and Improve Quality by Empowering the Delivery Team"
 summary: >
   One of the biggest bottlenecks in the delivery software changes can be the hand over between teams; whether this is passing a change to a test team to validate the release or handing a release over to the operations team to deploy. What if we could remove those bottlenecks by empowering the delivery team?
 date:   2016-07-13 18:00:00

@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Dave is a software engineer specialising in enterprise Java, with an keen interest in a variety of technologies and development practices, including web technologies, application architecture, agile development and continuous delivery.
+Dave is a software engineer specialising in agile and devops principles, continuous delivery and automation for driving repeatable, frequent, high quality delivery of software.

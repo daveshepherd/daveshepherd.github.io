@@ -187,7 +187,7 @@ I am going to attempt to address these concerns as my investigation continues.
 
 You can download and run the complete projects used in this article from [bitbucket][bitbucket]
 
-[software-building-hell]:   http://daveshepherd.co.uk/2012-04-software-building-hell
+[software-building-hell]:   {{ site.baseurl }}/2012-04-software-building-hell
 [ivy]:                      http://ant.apache.org/ivy/
 [maven]:                    http://maven.apache.org/
 [ant]:                      http://ant.apache.org/

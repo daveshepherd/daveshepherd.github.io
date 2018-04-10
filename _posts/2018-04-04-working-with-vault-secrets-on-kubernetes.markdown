@@ -5,7 +5,7 @@ summary: >
   Hashicorp’s Vault is more than just a secrets store, it can be used to dynamically create secrets with the relevant permissions at the time that they are required. This has great security benefits, because it not only means that no-one actually needs to know passwords and other secrets as they only exist when they are required, but also it encourages applications and systems to expect secrets to become invalid at some point (expire).  This makes the idea of regular passwords/secrets rotation the norm rather than something to be scared of. I’m sure you’ve come across the scenario: “I don’t know what’s using this password and I don’t want to break anything so I’ll leave it as it is”.
 image: "vault-and-kubernetes.png"
 date:   2018-04-04 17:30:00
-tags: devops vault kubernetes secrets
+tags: devops vault kubernetes secrets docker
 ---
 [Hashicorp’s Vault](https://www.vaultproject.io/) is more than just a secrets store, it can be used to dynamically create secrets with the relevant permissions at the time that they are required. This has great security benefits, because it not only means that no-one actually needs to know passwords and other secrets as they only exist when they are required, but also it encourages applications and systems to expect secrets to become invalid at some point (expire). This makes the idea of regular passwords/secrets rotation the norm rather than something to be scared of. I’m sure you’ve come across the scenario: “I don’t know what’s using this password and I don’t want to break anything so I’ll leave it as it is”.
 
@@ -64,7 +64,7 @@ In the examples in this article the application has to know about and interact w
 
 This is particularly important when working with Kubernetes, as Docker images are used to run applications. It is normally desirable to run official Docker images for applications as these are maintained, tested and patched against vulnerabilities. If they were modified in-house to include something that handles the interaction with Vault then that adds an overhead to maintaining and updating these applications.
 
-The next article in this series will talk about how init and sidecar containers in Kubernetes can be used to handle all this instead.
+The [next article](/2018-04-working-with-vault-secrets-that-expire-on-kubernetes) in this series will talk about how init and sidecar containers in Kubernetes can be used to handle all this instead.
 
 [vault-basic-usage-sequence]: {{ site.baseurl }}/assets/vault-basic-usage-sequence.png
 [vault-kubernetes-authentication-sequence]: {{ site.baseurl }}/assets/vault-kubernetes-authentication-sequence.png

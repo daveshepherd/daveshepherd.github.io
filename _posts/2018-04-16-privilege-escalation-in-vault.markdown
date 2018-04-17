@@ -2,12 +2,12 @@
 layout: post
 title:  "Privilege escalation in Vault  "
 summary: >
-  After using Vault for a period of time we recognised a risk around the KV secrets engine that means that users could accidentally overwrite or delete secrets stored there using the Vault CLI, accidents happen after all. Unlike other secrets engine, like the AWS secrets engine where the secrets are created when requested and if revoked can be requested again, the key value secrets are lost if they are updated or deleted.
+  After using Vault for a period of time we recognised a risk around the KV secrets engine which means that users could accidentally overwrite or delete secrets stored there using the Vault CLI, accidents happen after all. Unlike other secrets engine, like the AWS secrets engines where the secrets are created when requested and if revoked can be requested again, the key value secrets are lost if they are updated or deleted.
 image: "sudo-vault.png"
 date:   2018-04-16 17:00:00
 tags: devops vault secrets
 ---
-After using [Vault](https://www.vaultproject.io/) for a period of time we recognised a risk around the [KV secrets engine](https://www.vaultproject.io/docs/secrets/kv/index.html) that means that users could accidentally overwrite or delete secrets stored there using the Vault CLI, accidents happen after all. Unlike other secrets engine, like the [AWS secrets engine](https://www.vaultproject.io/docs/secrets/aws/index.html) where the secrets are created when requested and if revoked can be requested again, the key value secrets are lost if they are updated or deleted.
+After using [Vault](https://www.vaultproject.io/) for a period of time we recognised a risk around the [KV secrets engine](https://www.vaultproject.io/docs/secrets/kv/index.html) which means that users could accidentally overwrite or delete secrets stored there using the Vault CLI, accidents happen after all. Unlike other secrets engines, like the [AWS secrets engine](https://www.vaultproject.io/docs/secrets/aws/index.html) where the secrets are created when requested and if revoked can be requested again, the key value secrets are lost if they are updated or deleted.
 
 If this happens, the backup can be used to restore only the secrets that have been lost. However, this is not a trivial process and could take a little bit of time. In fact, shortly after identifying this risk, this backup process was put into practice for real after one of our engineers made a mistake when trying to add some new secrets.
 

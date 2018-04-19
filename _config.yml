@@ -12,5 +12,4 @@ future: true
 # Build settings
 markdown: kramdown
 paginate: 10
-permalink: 2013-10-experts-sharing-their-insights-other-disciplines-needs-be-new-norm
 permalink: /:year-:month-:title

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Privilege escalation in Vault  "
+title:  "Privilege escalation in Vault"
 summary: >
   After using Vault for a period of time we recognised a risk around the KV secrets engine which means that users could accidentally overwrite or delete secrets stored there using the Vault CLI, accidents happen after all. Unlike other secrets engine, like the AWS secrets engines where the secrets are created when requested and if revoked can be requested again, the key value secrets are lost if they are updated or deleted.
 image: "sudo-vault.png"

@@ -25,7 +25,7 @@ Takeaways:
 * Don't be afraid to get involved in a field that you don't know much about
 * Don't be afraid to get people that don't know much about your field involved with your problems
 
-Read more from [Kathryn Myronuk’s talk at Wired UK 2013][wired-2013-kathryn-myronuk].
+See more from [Kathryn Myronuk’s talk at Wired UK 2013][wired-2013-kathryn-myronuk].
 
 [singularity-university]:       http://singularityu.org/
-[wired-2013-kathryn-myronuk]:   http://www.wired.co.uk/news/archive/2013-10/17/kathryn-myronuk
+[wired-2013-kathryn-myronuk]:   https://www.youtube.com/watch?v=tSaamDu5pws

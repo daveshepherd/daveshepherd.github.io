@@ -31,9 +31,6 @@ This new API provides an improved file system interface and support asynchronous
 
 It is becoming quite common to provide implementations of other programming languages (particularly scripting languages) that run on the Java Virtual Machine. This has become popular because it removes the need to install individual scripting engines, when working with modern heterogeneous environments and systems. Dynamically typed languages like Ruby and Python already have Java implementations (JRuby and Jython respectively) that are widely used and in fact scripting languages are often chosen to produce small simple solutions quickly and without compilation that would otherwise be quite an undertaking if developing in pure Java. These improvements mean that when running dynamically typed languages in the JVM they run at performance levels near to Java.
 
-The video presentations and slides from the launch are available on the [Oracle Web Site][java-7-launch].
-
 There are other improvements that were not discussed, but you can review the [JDK 7 features page][java-7-features].
 
-[java-7-launch]:	http://www.oracle.com/us/corporate/events/java7/index.html
 [java-7-features]:	http://openjdk.java.net/projects/jdk7/features/

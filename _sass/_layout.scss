@@ -250,3 +250,7 @@
 #hideoverflow { overflow: hidden; }
 #outer { position: relative; left: 50%; float: left; }
 #inner { position: relative; left: -50%; float: left; }
+
+.pagination span, em, a {
+    padding: 5px;
+}

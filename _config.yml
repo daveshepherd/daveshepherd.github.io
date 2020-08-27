@@ -3,7 +3,7 @@ title: Dave Shepherd
 description: > # this means to ignore newlines until "baseurl:"
   Dave is a software engineer specialising in agile and devops principles, continuous delivery and automation for driving repeatable, frequent, high quality delivery of software.
 baseurl: ""
-url: "http://daveshepherd.uk"
+url: "https://daveshepherd.uk"
 linkedin_username: dashepherd
 github_username: daveshepherd
 medium_username: dave.shepherd

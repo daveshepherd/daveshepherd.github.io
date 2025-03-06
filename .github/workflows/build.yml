@@ -60,7 +60,7 @@ jobs:
       - name: Install percy
         run: npm install --save-dev @percy/cli
       - name: Generate snapshots
-        run: npx percy snapshot _site/
+        run: npx percy snapshot _site/ |& tee /dev/stderr | grep -vzq "Build not created"
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
 

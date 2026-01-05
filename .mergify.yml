@@ -5,7 +5,7 @@ queue_rules:
   - name: default
     batch_size: 1
     update_method: merge
-    conditions:
+    queue_conditions:
       - "#approved-reviews-by>=1"
       - -label~=(do-not-merge)
       - status-success=build
@@ -38,3 +38,5 @@ pull_request_rules:
       review:
         type: APPROVE
         message: Automatically approving projen upgrade
+merge_queue:
+  max_parallel_checks: 1

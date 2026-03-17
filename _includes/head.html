@@ -1,18 +1,41 @@
 <head>
+    {% assign meta_title = page.title | default: site.title %}
+    {% assign meta_description = page.excerpt | default: page.summary | default: site.description | strip_html | strip_newlines | truncate: 160 %}
+    {% assign canonical_url = page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url %}
+    {% if page.image %}
+      {% assign social_image = '/assets/' | append: page.image | prepend: site.baseurl | prepend: site.url %}
+    {% endif %}
+
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-    <meta name="description" content="{{ site.description }}">
+    <meta name="description" content="{{ meta_description }}">
 
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+
+    <meta property="og:title" content="{{ meta_title | escape }}">
+    <meta property="og:description" content="{{ meta_description | escape }}">
+    <meta property="og:url" content="{{ canonical_url }}">
+    <meta property="og:site_name" content="{{ site.title | escape }}">
+    <meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}">
+    {% if social_image %}
+    <meta property="og:image" content="{{ social_image }}">
+    {% endif %}
+
+    <meta name="twitter:card" content="{% if social_image %}summary_large_image{% else %}summary{% endif %}">
+    <meta name="twitter:title" content="{{ meta_title | escape }}">
+    <meta name="twitter:description" content="{{ meta_description | escape }}">
+    {% if social_image %}
+    <meta name="twitter:image" content="{{ social_image }}">
+    {% endif %}
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LKXJ795DC9"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    globalThis.dataLayer = globalThis.dataLayer || [];
+    function gtag(){globalThis.dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'G-LKXJ795DC9');

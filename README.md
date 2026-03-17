@@ -7,7 +7,7 @@ docker run -it -v $(pwd):/usr/src -p 4000:4000 ruby:3 /bin/bash
 ```
 
 ```
-bundler install
+bundle install
 bundle exec jekyll serve --host 0.0.0.0
 ```
 

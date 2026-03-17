@@ -9,7 +9,7 @@ layout: default
   </header>
 
   <article class="post-content">
-  	{% if page.image %}<img class="post-image" src="{{ site.baseurl }}/assets/{{ page.image }}" />{% endif %}
+	{% if page.image %}<img class="post-image" src="{{ site.baseurl }}/assets/{{ page.image }}" alt="" loading="lazy" />{% endif %}
     
     {{ content }}
   </article>

@@ -54,9 +54,12 @@
             float: right;
             width: 36px;
             height: 26px;
+            border: 0;
+            background: transparent;
             line-height: 0;
             padding-top: 10px;
             text-align: center;
+            cursor: pointer;
 
             > svg {
                 width: 18px;
@@ -73,7 +76,7 @@
             display: none;
         }
 
-        &:hover .trigger {
+        &.is-open .trigger {
             display: block;
             padding-bottom: 5px;
         }
@@ -111,9 +114,7 @@
     color: $grey-color-light;
     margin-left: -$spacing-unit / 2;
     @extend %clearfix;
-}
 
-.footer-col-wrapper {
     a {
         color: $grey-color-light;
         text-decoration: none;
@@ -251,6 +252,8 @@
 #outer { position: relative; left: 50%; float: left; }
 #inner { position: relative; left: -50%; float: left; }
 
-.pagination span, em, a {
+.pagination span,
+.pagination em,
+.pagination a {
     padding: 5px;
 }

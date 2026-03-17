@@ -1,0 +1,9 @@
+{
+    "conventionalCommits.scopes": [
+        "dependencies",
+        "percy",
+        "build",
+        "deployment",
+        "footer"
+    ]
+}

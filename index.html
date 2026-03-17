@@ -10,7 +10,7 @@ layout: default
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
-        {% if post.image %}<img class="post-image" src="{{ site.baseurl }}/assets/{{ post.image }}" />{% endif %}
+        {% if post.image %}<img class="post-image" src="{{ site.baseurl }}/assets/{{ post.image }}" alt="{{ post.image_alt | default: post.title | escape }}" loading="lazy" />{% endif %}
         <span class="post-meta">{{ post.date | date: "%-d %B %Y" }}</span>
         <p>{{ post.summary }}</p>
       </li>
@@ -49,6 +49,6 @@ layout: default
   </div>
   {% endif %}
 
-  <p class="rss-subscribe"><a href="{{ "/rss.xml" | prepend: site.baseurl }}"><img src="{{ site.baseurl }}/assets/feed.png" /></a></p>
+  <p class="rss-subscribe"><a href="{{ "/rss.xml" | prepend: site.baseurl }}"><img src="{{ site.baseurl }}/assets/feed.png" alt="Subscribe via RSS" /></a></p>
 
 </div>

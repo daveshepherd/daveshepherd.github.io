@@ -23,6 +23,11 @@
       </div>
 
       <noscript>
+        <style>
+          .site-nav .trigger {
+            display: none !important;
+          }
+        </style>
         <div class="no-js-trigger" id="site-nav-trigger-noscript">
           {% for page in site.pages %}
             {% if page.title %}

@@ -1,19 +1,20 @@
 ---
 layout: post
-title:  "Introducing Dependency Management (or Ivy vs Maven)"
+title: "Introducing Dependency Management (or Ivy vs Maven)"
 summary: >
   Following on from my previous article, I having been working on a project where the dependencies between modules is becoming unmanageable. The solution to this problem is to use a dependency management system like Apache Ivy or Apache Maven.
 image: ivy-maven-logo.png
-date:   2012-05-09 20:33:00
+date: 2012-05-09 20:33:00
 tags: ant java maven development dependency-management
 ---
+
 Following on from my [previous article][software-building-hell], I having been working on a project where the dependencies between modules is becoming unmanageable. The solution to this problem is to use a dependency management system like [Apache Ivy][ivy] or [Apache Maven][maven].
 
 The basic idea behind dependency management tools is that the project defines the artifacts that it depends on by referencing their coordinates (group Id, artifact Id and version). Using the coordinates the build mechanism can ensure that the correct version of the dependency is made available to the project build. The use of a dependency management tool simplifies the build process and will always ensure that the correct artifacts are made available to a project. This is particularly useful when your projects are made up of multiple modules that are dependent on each other.
 
-I have been reading up on the two main dependency management tools to get an idea of how they work and to see which is the best tool for our project. It is worth noting at this point that Ivy and Maven are not directly comparable; Ivy is purely a dependency management tool can be used by [Ant][ant], whereas Maven is better described as a build automation tool. A better comparison is *Apache Ant + Ivy* vs *Apache Maven*.
+I have been reading up on the two main dependency management tools to get an idea of how they work and to see which is the best tool for our project. It is worth noting at this point that Ivy and Maven are not directly comparable; Ivy is purely a dependency management tool can be used by [Ant][ant], whereas Maven is better described as a build automation tool. A better comparison is _Apache Ant + Ivy_ vs _Apache Maven_.
 
-This [topic][m2-comparison] has been [covered][stackoverflow] many times [before][lex-hazlewood], with [varying conclusions][lex-hazlewood-revisited]. This article focuses on my experiences with learning both tools and my initial impressions.
+This [topic][m2-comparison] has been [covered][stackoverflow] many times before, with varying conclusions. This article focuses on my experiences with learning both tools and my initial impressions.
 
 ## Lets Get Started...
 
@@ -187,16 +188,14 @@ I am going to attempt to address these concerns as my investigation continues.
 
 You can download and run the complete projects used in this article from [bitbucket][bitbucket]
 
-[software-building-hell]:   {{ site.baseurl }}/2012-04-software-building-hell
-[ivy]:                      http://ant.apache.org/ivy/
-[maven]:                    http://maven.apache.org/
-[ant]:                      http://ant.apache.org/
-[m2-comparison]:            http://ant.apache.org/ivy/m2comparison.html
-[stackoverflow]:            http://stackoverflow.com/questions/318804/maven-or-ivy-for-managing-dependencies-from-ant
-[lex-hazlewood]:            http://leshazlewood.com/2008/03/18/maven-2-vs-antivy-our-selection-process/
-[lex-hazlewood-revisited]:  http://leshazlewood.com/2010/01/13/maven-2-vs-antivy-revisited/
-[simple-jar-ant]:           https://bitbucket.org/daveshepherd/examples/src/80282593a97a/simple-jar-ant/
-[simple-jar-mvn]:           https://bitbucket.org/daveshepherd/examples/src/80282593a97a/simple-jar-mvn/
-[simple-jar-test-ivy]:      https://bitbucket.org/daveshepherd/examples/src/80282593a97a/simple-jar-test-ivy/
-[simple-jar-test-mvn]:      https://bitbucket.org/daveshepherd/examples/src/80282593a97a/simple-jar-test-mvn/
-[bitbucket]:                https://bitbucket.org/daveshepherd/examples/src
+[software-building-hell]: {{ site.baseurl }}/2012-04-software-building-hell
+[ivy]: https://ant.apache.org/ivy/
+[maven]: https://maven.apache.org/
+[ant]: https://ant.apache.org/
+[m2-comparison]: https://ant.apache.org/ivy/m2comparison.html
+[stackoverflow]: https://stackoverflow.com/questions/318804/maven-or-ivy-for-managing-dependencies-from-ant
+[simple-jar-ant]: https://bitbucket.org/daveshepherd/examples/src/80282593a97a/simple-jar-ant/
+[simple-jar-mvn]: https://bitbucket.org/daveshepherd/examples/src/80282593a97a/simple-jar-mvn/
+[simple-jar-test-ivy]: https://bitbucket.org/daveshepherd/examples/src/80282593a97a/simple-jar-test-ivy/
+[simple-jar-test-mvn]: https://bitbucket.org/daveshepherd/examples/src/80282593a97a/simple-jar-test-mvn/
+[bitbucket]: https://bitbucket.org/daveshepherd/examples/src

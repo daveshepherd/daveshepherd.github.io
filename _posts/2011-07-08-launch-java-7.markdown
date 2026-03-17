@@ -1,12 +1,13 @@
 ---
 layout: post
-title:  "The Launch of Java 7"
+title: "The Launch of Java 7"
 summary: >
   The 7th July (7/7) saw the launch of Java 7 by Oracle. The launch was hosted in California, with speakers from the São Paulo and London Java User Groups, and was broadcast live through the Oracle web site. To see what Oracle Java 7 had to offer we joined in the webcast for the evening.
 image: java.jpg
-date:   2011-07-08 19:41:00
+date: 2011-07-08 19:41:00
 tags: java development technology
 ---
+
 The 7th July (7/7) saw the launch of Java 7 by Oracle. The launch was hosted in California, with speakers from the São Paulo and London Java User Groups, and was broadcast live through the Oracle web site. To see what Oracle Java 7 had to offer we joined in the webcast for the evening.
 
 Java 7 is the latest release of the Java programming language, standard libraries and runtime environment from Oracle. Java is used extensively for developing enterprise level applications and this release continues to build on an already strong product, with an extensive community across the world.
@@ -33,4 +34,4 @@ It is becoming quite common to provide implementations of other programming lang
 
 There are other improvements that were not discussed, but you can review the [JDK 7 features page][java-7-features].
 
-[java-7-features]:	http://openjdk.java.net/projects/jdk7/features/
+[java-7-features]: https://openjdk.org/projects/jdk7/features/

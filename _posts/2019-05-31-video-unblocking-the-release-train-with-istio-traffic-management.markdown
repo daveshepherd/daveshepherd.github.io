@@ -9,7 +9,7 @@ date:   2019-05-31 10:38:00
 tags: istio traffic-routing kubernetes service-mesh
 ---
 Recently, [Pierre Meunier](https://medium.com/@pierre.meunier) and I delivered a talk at
-[KubeCon/CloudNativeCon Europe 2019(https://events19.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/)
+[KubeCon/CloudNativeCon Europe 2019](https://events19.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/)
 in Barcelona on our use of the [Istio service mesh](https://istio.io/). You can view
 this talk on YouTube:
 

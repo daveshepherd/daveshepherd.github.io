@@ -1,13 +1,14 @@
 ---
 layout: post
-title:  "Experts Sharing Their Insights With Other Disciplines Needs To Be The New Norm"
+title: "Experts Sharing Their Insights With Other Disciplines Needs To Be The New Norm"
 summary: >
   "Experts sharing their insights with other disciplines needs to be the new norm" - Kathryn Myronuk, Singularity University.
   When you get a group of people together from a diverse background, whether that’s cultural or educational, you can spark ideas that would not otherwise have occurred to them. This is the idea behind some of the work being done by Singularity University.
 image: "wired2013.png"
-date:   2013-10-28 16:10:00
+date: 2013-10-28 16:10:00
 tags: wired ideas innovation
 ---
+
 "Experts sharing their insights with other disciplines needs to be the new norm" - Kathryn Myronuk, Singularity University.
 
 When you get a group of people together from a diverse background, whether that’s cultural or educational, you can spark ideas that would not otherwise have occurred to them. This is the idea behind some of the work being done by [Singularity University][singularity-university].
@@ -20,12 +21,12 @@ So rather than sticking to our own teams, groups and areas of expertise, lets st
 
 Takeaways:
 
-* Diversity is good for sparking innovative ideas
-* Sharing experience and expertise can motivate unexpected ideas in others
-* Don't be afraid to get involved in a field that you don't know much about
-* Don't be afraid to get people that don't know much about your field involved with your problems
+- Diversity is good for sparking innovative ideas
+- Sharing experience and expertise can motivate unexpected ideas in others
+- Don't be afraid to get involved in a field that you don't know much about
+- Don't be afraid to get people that don't know much about your field involved with your problems
 
 See more from [Kathryn Myronuk’s talk at Wired UK 2013][wired-2013-kathryn-myronuk].
 
-[singularity-university]:       http://singularityu.org/
-[wired-2013-kathryn-myronuk]:   https://www.youtube.com/watch?v=tSaamDu5pws
+[singularity-university]: https://www.su.org/
+[wired-2013-kathryn-myronuk]: https://www.youtube.com/watch?v=tSaamDu5pws

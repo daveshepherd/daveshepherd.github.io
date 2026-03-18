@@ -48,7 +48,7 @@ Finally, it is important to realise that there is no "one size fits all" solutio
 [software-regression]: https://en.wikipedia.org/wiki/Software_regression
 [unit-testing]: https://en.wikipedia.org/wiki/Unit_testing
 [integration-testing]: https://en.wikipedia.org/wiki/Integration_testing
-[selenium]: hhttps://www.selenium.dev/
+[selenium]: https://www.selenium.dev/
 [james-shore]: https://www.jamesshore.com/v2/blog/2010/alternatives-to-acceptance-testing
 [cobertura]: https://cobertura.github.io/cobertura/
 [martin-fowler]: https://martinfowler.com/articles/continuousIntegration.html#PracticesOfContinuousIntegration

@@ -22,7 +22,7 @@ Test driven development (TDD) is a programming technique that advocates the deve
 Unit tests allow developers to ensure that the production code they write does what they expect, and continues to do so as the software evolves. Test driven development adds to the benefits of unit testing by:
 
 - Ensuring that there are unit tests for all production functionality; because by definition production code is not written until there is a failing test for it
-  Encouraging developers to think about the desired behaviour of the production code before writing it
+- Encouraging developers to think about the desired behaviour of the production code before writing it
 - Encouraging the development to be broken up into small manageable tasks that can be implemented quickly
 - Focusing on the development of one requirement at a time, i.e. 'just enough'; if future requirements involve changes to code previously written then the existing tests will prevent any regression
 - Documenting the code; if the test are given appropriate names explaining the purpose of the test, they are kept small by only testing a single requirement and are clearly written then it should be straightforward to work out what the required behaviour is

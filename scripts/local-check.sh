@@ -26,7 +26,7 @@ echo "==> Building site in production mode"
 JEKYLL_ENV=production bundle exec jekyll build
 
 echo "==> Running html-proofer on generated site"
-bundle exec htmlproofer ./_site --disable-external
+bash scripts/run-htmlproofer.sh --disable-external ./_site
 
 if [[ "$RUN_PERCY" == "true" ]]; then
   if [[ -z "${PERCY_TOKEN:-}" ]]; then

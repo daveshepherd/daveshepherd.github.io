@@ -31,7 +31,7 @@ pull_request_rules:
       - or:
           - status-success=percy/daveshepherd.github.io
           - status-success=snapshot-skipped
-  - name: Automatic approval for projen upgrade pull requests
+  - name: Automatic approval for dependabot upgrade pull requests
     conditions:
       - author=dependabot[bot]
       - status-success=build
@@ -42,6 +42,6 @@ pull_request_rules:
     actions:
       review:
         type: APPROVE
-        message: Automatically approving projen upgrade
+        message: Automatically approving dependabot upgrade
 merge_protections_settings:
   reporting_method: deployments

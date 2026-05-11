@@ -50,7 +50,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
       - name: Setup Ruby
-        # https://github.com/ruby/setup-ruby/releases/tag/v1.207.0
         uses: ruby/setup-ruby@c4e5b1316158f92e3d49443a9d58b31d25ac0f8f
         with:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
@@ -85,13 +84,24 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: "latest"
-      - name: Install percy
+      - name: Detect system Chrome for Percy
         if: needs.changes.outputs.site == 'true' || github.event_name == 'workflow_dispatch'
-        run: npm install --save-dev @percy/cli
+        run: |
+          if command -v google-chrome >/dev/null 2>&1; then
+            echo "PERCY_BROWSER_EXECUTABLE=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          fi
       - name: Generate snapshots
         if: needs.changes.outputs.site == 'true' || github.event_name == 'workflow_dispatch'
-        run: npx percy snapshot _site/ |& tee /dev/stderr | grep -vzq "Build not created"
+        timeout-minutes: 15
+        run: |
+          set -o pipefail
+          npx --yes @percy/cli snapshot _site/ 2>&1 | tee percy.log
+          if grep -q "Build not created" percy.log; then
+            echo "Percy reported: Build not created"
+            exit 1
+          fi
         env:
+          PERCY_EXIT_WITH_ZERO_ON_ERROR: false
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
       - name: Set snapshot-skipped status
         if: needs.changes.outputs.site != 'true' && github.event_name != 'workflow_dispatch'

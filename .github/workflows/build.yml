@@ -92,6 +92,7 @@ jobs:
         if: needs.changes.outputs.site == 'true' || github.event_name == 'workflow_dispatch'
         run: npx percy snapshot _site/ |& tee /dev/stderr | grep -vzq "Build not created"
         env:
+          PERCY_EXIT_WITH_ZERO_ON_ERROR: false
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
       - name: Set snapshot-skipped status
         if: needs.changes.outputs.site != 'true' && github.event_name != 'workflow_dispatch'

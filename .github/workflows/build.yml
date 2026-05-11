@@ -50,7 +50,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
       - name: Setup Ruby
-        # https://github.com/ruby/setup-ruby/releases/tag/v1.207.0
         uses: ruby/setup-ruby@c4e5b1316158f92e3d49443a9d58b31d25ac0f8f
         with:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically

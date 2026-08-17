@@ -31,7 +31,3 @@ This new API provides an improved file system interface and support asynchronous
 ## Improvements in Support for Dynamically Typed Languages (InvokeDynamic)
 
 It is becoming quite common to provide implementations of other programming languages (particularly scripting languages) that run on the Java Virtual Machine. This has become popular because it removes the need to install individual scripting engines, when working with modern heterogeneous environments and systems. Dynamically typed languages like Ruby and Python already have Java implementations (JRuby and Jython respectively) that are widely used and in fact scripting languages are often chosen to produce small simple solutions quickly and without compilation that would otherwise be quite an undertaking if developing in pure Java. These improvements mean that when running dynamically typed languages in the JVM they run at performance levels near to Java.
-
-There are other improvements that were not discussed, but you can review the [JDK 7 features page][java-7-features].
-
-[java-7-features]: https://openjdk.org/projects/jdk7/features/

@@ -6,7 +6,7 @@ description: "Use when editing Liquid templates, includes, and page templates fo
 # Templates Instructions
 
 ## Compatibility
-- Keep templates compatible with GitHub Pages and the github-pages gem stack.
+- Keep templates compatible with Jekyll 4 and the plugins listed in `Gemfile`.
 - Prefer minimal, surgical edits and preserve existing URL behaviour.
 
 ## Liquid and markup

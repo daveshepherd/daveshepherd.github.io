@@ -13,3 +13,6 @@ future: true
 markdown: kramdown
 paginate: 10
 permalink: /:year-:month-:title
+plugins:
+  - jekyll-gist
+  - jekyll-paginate

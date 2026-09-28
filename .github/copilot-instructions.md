@@ -1,15 +1,15 @@
 # Copilot Instructions for daveshepherd.github.io
 
 ## Project context
-- This is a Jekyll site deployed with GitHub Pages.
+- This is a Jekyll 4 site, built by GitHub Actions and deployed to GitHub Pages.
 - Primary stack: Liquid templates, Markdown posts, SCSS partials, and static assets.
-- Dependency baseline is intentionally aligned with `github-pages` in `Gemfile`.
+- Dependencies are declared explicitly in `Gemfile` (Jekyll plus the `jekyll-gist` and `jekyll-paginate` plugins); the `github-pages` gem is not used.
 
 ## What to prioritize
 - Preserve existing site behaviour and URL structure.
 - Prefer minimal, surgical changes over broad refactors.
 - Keep accessibility and semantic HTML as first-class requirements.
-- Keep edits compatible with the current GitHub Pages/Jekyll toolchain.
+- Keep edits compatible with the current Jekyll 4 toolchain and the plugins listed in `Gemfile`.
 
 ## File and content conventions
 - Posts live in `_posts/` and use frontmatter + Markdown.
@@ -36,13 +36,13 @@
 
 ## Dependency and build rules
 - Use HTTPS for external sources and links.
-- Do not upgrade away from `github-pages` or Jekyll major versions unless explicitly asked.
-- Treat Ruby Sass/html-pipeline/rubyzip post-install warnings as expected unless changing toolchain.
+- Do not upgrade Jekyll major versions or add Jekyll plugins unless explicitly asked.
+- Keep `Gemfile` and `Gemfile.lock` in sync when changing dependencies.
 
 ## Suggested validation
 - For content/template/style edits, run a local build when possible:
-  - `bundle install`
-  - `bundle exec jekyll serve --host 0.0.0.0`
+  - `scripts/local-check.sh` (runs `jekyll doctor`, a production build and html-proofer)
+  - `bundle exec jekyll serve --host 0.0.0.0` to preview
 - If lint or diagnostics are available, resolve new warnings introduced by your changes.
 
 ## Pull request quality bar

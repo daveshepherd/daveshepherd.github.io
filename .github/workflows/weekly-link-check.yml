@@ -1,4 +1,4 @@
-name: Nightly strict link checks
+name: Weekly strict link checks
 
 on:
   schedule:

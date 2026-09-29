@@ -42,6 +42,8 @@ jobs:
               - '_config.yml'
               - 'Gemfile'
               - 'Gemfile.lock'
+              - 'package.json'
+              - 'package-lock.json'
 
   # Build job
   build:
@@ -83,7 +85,11 @@ jobs:
         run: tar -xvf _site/artifact.tar --directory=_site/
       - uses: actions/setup-node@v7
         with:
-          node-version: "latest"
+          node-version: "24"
+          cache: npm
+      - name: Install Percy CLI
+        if: needs.changes.outputs.site == 'true' || github.event_name == 'workflow_dispatch'
+        run: npm ci --no-audit --no-fund
       - name: Detect system Chrome for Percy
         if: needs.changes.outputs.site == 'true' || github.event_name == 'workflow_dispatch'
         run: |
@@ -95,7 +101,7 @@ jobs:
         timeout-minutes: 15
         run: |
           set -o pipefail
-          npx --yes @percy/cli snapshot _site/ 2>&1 | tee percy.log
+          npx percy snapshot _site/ 2>&1 | tee percy.log
           if grep -q "Build not created" percy.log; then
             echo "Percy reported: Build not created"
             exit 1

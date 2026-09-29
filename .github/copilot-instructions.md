@@ -3,7 +3,7 @@
 ## Project context
 - This is a Jekyll 4 site, built by GitHub Actions and deployed to GitHub Pages.
 - Primary stack: Liquid templates, Markdown posts, SCSS partials, and static assets.
-- Dependencies are declared explicitly in `Gemfile` (Jekyll plus the `jekyll-gist` and `jekyll-paginate` plugins); the `github-pages` gem is not used.
+- Dependencies are declared explicitly in `Gemfile` (Jekyll plus the `jekyll-paginate` plugin); the `github-pages` gem is not used.
 
 ## What to prioritize
 - Preserve existing site behaviour and URL structure.

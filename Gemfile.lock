@@ -26,14 +26,6 @@ GEM
       ffi (>= 1.15.0)
       logger
     eventmachine (1.2.7)
-    faraday (2.14.4)
-      faraday-net_http (>= 2.0, < 3.5)
-      json
-      logger
-    faraday-net_http (3.4.4)
-      net-http (~> 0.5)
-    faraday-retry (2.4.0)
-      faraday (~> 2.0)
     ffi (1.17.4-aarch64-linux-gnu)
     ffi (1.17.4-arm64-darwin)
     ffi (1.17.4-x86_64-darwin)
@@ -89,8 +81,6 @@ GEM
       safe_yaml (~> 1.0)
       terminal-table (>= 1.8, < 4.0)
       webrick (~> 1.7)
-    jekyll-gist (1.5.0)
-      octokit (~> 4.2)
     jekyll-paginate (1.1.0)
     jekyll-sass-converter (3.1.0)
       sass-embedded (~> 1.75)
@@ -108,8 +98,6 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.10)
     logger (1.7.0)
     mercenary (0.4.0)
-    net-http (0.9.1)
-      uri (>= 0.11.1)
     nokogiri (1.19.4-aarch64-linux-gnu)
       racc (~> 1.4)
     nokogiri (1.19.4-arm64-darwin)
@@ -118,9 +106,6 @@ GEM
       racc (~> 1.4)
     nokogiri (1.19.4-x86_64-linux-gnu)
       racc (~> 1.4)
-    octokit (4.25.1)
-      faraday (>= 1, < 3)
-      sawyer (~> 0.9)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     pdf-reader (2.16.0)
@@ -146,9 +131,6 @@ GEM
       google-protobuf (~> 4.31)
     sass-embedded (1.105.0-x86_64-linux-gnu)
       google-protobuf (~> 4.31)
-    sawyer (0.9.3)
-      addressable (>= 2.3.5)
-      faraday (>= 0.17.3, < 3)
     terminal-table (3.0.2)
       unicode-display_width (>= 1.1.1, < 3)
     ttfunk (1.8.0)
@@ -156,7 +138,6 @@ GEM
     typhoeus (1.6.0)
       ethon (>= 0.18.0)
     unicode-display_width (2.6.0)
-    uri (1.1.1)
     webrick (1.9.2)
     yell (2.2.2)
     zeitwerk (2.8.3)
@@ -169,10 +150,8 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  faraday-retry (~> 2.0)
   html-proofer (~> 5.2)
   jekyll (~> 4.4)
-  jekyll-gist (~> 1.5)
   jekyll-paginate (~> 1.1)
   webrick (~> 1.9)
 

@@ -23,25 +23,47 @@ jobs:
   changes:
     runs-on: ubuntu-latest
     outputs:
-      site: ${{ steps.filter.outputs.site }}
+      snapshot: ${{ steps.decide.outputs.snapshot }}
+      skip-reason: ${{ steps.decide.outputs.skip-reason }}
     steps:
       - uses: actions/checkout@v7
       - uses: dorny/paths-filter@v4
         id: filter
         with:
+          # Anything can affect the built site except these repo-only files.
+          predicate-quantifier: some-with-excludes
           filters: |
             site:
-              - '_posts/**'
-              - '_layouts/**'
-              - '_includes/**'
-              - '_sass/**'
-              - 'css/**'
-              - 'assets/**'
-              - '**/*.html'
-              - '**/*.md'
-              - '_config.yml'
-              - 'Gemfile'
-              - 'Gemfile.lock'
+              - '**'
+              - '!README.md'
+              - '!CLAUDE.md'
+              - '!.github/**'
+              - '!.mergify.yml'
+              - '!.vscode/**'
+              - '!.gitignore'
+              - '!scripts/**'
+      # Percy snapshots count against a monthly quota, so skip them when they
+      # can't show anything new: no site change, or Mergify merging main into
+      # an already-snapshotted PR before queueing it (main's own build still
+      # snapshots the merged result).
+      - name: Decide whether to take Percy snapshots
+        id: decide
+        env:
+          EVENT: ${{ github.event_name }}
+          ACTOR: ${{ github.actor }}
+          SITE: ${{ steps.filter.outputs.site }}
+        run: |
+          if [[ "$EVENT" == "workflow_dispatch" ]]; then
+            snapshot=true
+          elif [[ "$SITE" != "true" ]]; then
+            snapshot=false reason="no site files changed"
+          elif [[ "$EVENT" == "pull_request" && "$ACTOR" == "mergify[bot]" ]]; then
+            snapshot=false reason="Mergify branch update"
+          else
+            snapshot=true
+          fi
+          echo "snapshot=$snapshot" >> "$GITHUB_OUTPUT"
+          echo "skip-reason=${reason:-}" >> "$GITHUB_OUTPUT"
 
   # Build job
   build:
@@ -83,19 +105,23 @@ jobs:
         run: tar -xvf _site/artifact.tar --directory=_site/
       - uses: actions/setup-node@v7
         with:
-          node-version: "latest"
+          node-version: "24"
+          cache: npm
+      - name: Install Percy CLI
+        if: needs.changes.outputs.snapshot == 'true'
+        run: npm ci --no-audit --no-fund
       - name: Detect system Chrome for Percy
-        if: needs.changes.outputs.site == 'true' || github.event_name == 'workflow_dispatch'
+        if: needs.changes.outputs.snapshot == 'true'
         run: |
           if command -v google-chrome >/dev/null 2>&1; then
             echo "PERCY_BROWSER_EXECUTABLE=$(command -v google-chrome)" >> "$GITHUB_ENV"
           fi
       - name: Generate snapshots
-        if: needs.changes.outputs.site == 'true' || github.event_name == 'workflow_dispatch'
+        if: needs.changes.outputs.snapshot == 'true'
         timeout-minutes: 15
         run: |
           set -o pipefail
-          npx --yes @percy/cli snapshot _site/ 2>&1 | tee percy.log
+          npx percy snapshot _site/ 2>&1 | tee percy.log
           if grep -q "Build not created" percy.log; then
             echo "Percy reported: Build not created"
             exit 1
@@ -104,8 +130,10 @@ jobs:
           PERCY_EXIT_WITH_ZERO_ON_ERROR: false
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
       - name: Set snapshot-skipped status
-        if: needs.changes.outputs.site != 'true' && github.event_name != 'workflow_dispatch'
+        if: needs.changes.outputs.snapshot != 'true'
         uses: actions/github-script@v9
+        env:
+          SKIP_REASON: ${{ needs.changes.outputs.skip-reason }}
         with:
           script: |
             const commitSha = context.payload.pull_request?.head?.sha ?? context.sha;
@@ -115,7 +143,7 @@ jobs:
               sha: commitSha,
               state: 'success',
               context: 'snapshot-skipped',
-              description: 'Percy snapshots skipped — no site files changed'
+              description: `Percy snapshots skipped — ${process.env.SKIP_REASON}`
             });
 
   # Deployment job

@@ -1,0 +1,5 @@
+version: 2
+static:
+  # Pagination pages reuse the home page layout, which index.html already covers.
+  exclude:
+    - "/page*/**"

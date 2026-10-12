@@ -35,7 +35,8 @@ if [[ "$RUN_PERCY" == "true" ]]; then
   fi
 
   echo "==> Running Percy snapshot"
-  npx --yes @percy/cli snapshot _site
+  npm ci --no-audit --no-fund
+  npx percy snapshot _site
 fi
 
 echo "==> Local checks passed"

@@ -42,6 +42,9 @@ jobs:
               - '!.vscode/**'
               - '!.gitignore'
               - '!scripts/**'
+              - '!package.json'
+              - '!package-lock.json'
+              - '!.npmrc'
       # Percy snapshots count against a monthly quota, so skip them when they
       # can't show anything new: no site change, or Mergify merging main into
       # an already-snapshotted PR before queueing it (main's own build still

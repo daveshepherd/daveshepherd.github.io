@@ -1,5 +1,15 @@
 version: 2
 static:
-  # Pagination pages reuse the home page layout, which index.html already covers.
-  exclude:
-    - "/page*/**"
+  # Every post renders through _layouts/post.html, so a few posts that cover the
+  # content types (header image, code and the inlined gist, legacy raw-HTML
+  # markup, an iframe embed, no header image) catch the same layout and style
+  # regressions as snapshotting all of them. Pagination pages reuse the home
+  # page layout. Add any new top-level page here.
+  include:
+    - "/index.html"
+    - "/about/**"
+    - "/404.html"
+    - "/2018-04-privilege-escalation-in-vault.html"
+    - "/2012-05-introducing-dependency-management-or-ivy-vs-maven.html"
+    - "/2019-05-video-unblocking-the-release-train-with-istio-traffic-management.html"
+    - "/2012-06-releasing-software-push-button.html"

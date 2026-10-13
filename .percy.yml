@@ -1,4 +1,12 @@
 version: 2
+snapshot:
+  # Desktop only by default. The mobile layout is checked on the home page and
+  # one post (see static.options below), which share the mobile CSS with the rest.
+  widths: [1280]
+  # YouTube embeds can render differently between runs, so hide them while
+  # keeping the space they take up.
+  percyCSS: |
+    iframe[src*="youtube.com"] { visibility: hidden; }
 static:
   # Every post renders through _layouts/post.html, so a few posts that cover the
   # content types (header image, code and the inlined gist, legacy raw-HTML
@@ -13,3 +21,8 @@ static:
     - "/2012-05-introducing-dependency-management-or-ivy-vs-maven.html"
     - "/2019-05-video-unblocking-the-release-train-with-istio-traffic-management.html"
     - "/2012-06-releasing-software-push-button.html"
+  options:
+    - include:
+        - "/index.html"
+        - "/2018-04-privilege-escalation-in-vault.html"
+      widths: [375, 1280]

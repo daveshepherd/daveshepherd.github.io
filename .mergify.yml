@@ -13,8 +13,12 @@ queue_rules:
   - name: default
     batch_size: 1
     update_method: merge
+    # CI checks are merge conditions, not queue conditions: updating a PR from
+    # main resets them to pending, which would otherwise dequeue it.
+    branch_protection_injection_mode: merge
     queue_conditions:
       - -label~=(do-not-merge)
+    merge_conditions:
       - and: *ci_passed
     merge_method: squash
     commit_message_format:

@@ -1,7 +1,7 @@
 {
   "private": true,
   "devDependencies": {
-    "@percy/cli": "1.32.11"
+    "@percy/cli": "1.32.12"
   },
   "overrides": {
     "fast-xml-parser": "^5.7.0"
